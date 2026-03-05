@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.routes import router
+from app.api import routes
 from app.db.session import engine, Base
 from app.models import userModel  ## use app/models/__init__.py in can\se of multiple model import 
 from fastapi.middleware.cors import CORSMiddleware
@@ -24,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router)
+app.include_router(routes)
 
 # @app.on_event("startup")
 # def startup():
