@@ -1,8 +1,10 @@
 # this is same page as we have routs page for each controls in js 
 
 from fastapi import APIRouter
+from fastapi import HTTPException
 from app.services.user import create_user, get_user, update_user, delete_user , get_all
 from app.schema.user import UserCreate , UserResponse
+
 from typing import List
 userRouter = APIRouter()
 
