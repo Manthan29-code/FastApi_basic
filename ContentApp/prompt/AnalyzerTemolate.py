@@ -10,9 +10,15 @@ SENTIMENT_ANALYSIS_PROMPT = ChatPromptTemplate.from_messages([
         "- overall_sentiment: one of 'positive', 'negative', 'neutral'\n"
         "- confidence: float between 0.0 and 1.0\n"
         "- emotions: list from ['joy', 'satisfaction', 'anger', 'sadness', 'fear', 'surprise']\n"
-        "- breakdown: {breakdown_instruction}\n\n"
+        "- breakdown: accroding to describe in example output\n\n"
 
+        "If detailed=true:\n"
+        "Return sentence level breakdown.\n"
+
+        "If detailed=false:\n"
+        "Return breakdown as null.\n"
         "Example output (detailed=true):\n"
+
         "{{\n"
         '  "overall_sentiment": "positive",\n'
         '  "confidence": 0.94,\n'
@@ -33,6 +39,7 @@ SENTIMENT_ANALYSIS_PROMPT = ChatPromptTemplate.from_messages([
     ),
     (
         "human",
-        "Analyze the sentiment of the following text:\n{text}"
+        "Text: {text}\n"
+        "Detailed: {detailed}"
     )
 ])

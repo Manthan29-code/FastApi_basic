@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from enum import Enum
+from typing import Optional
 
 
 
@@ -46,7 +47,7 @@ class analyzerRequest(BaseModel):
     text: str = Field(..., description="Text to analyze")
     detailed: bool = Field(False, description="If true, returns per-sentence breakdown")
 
-class sentencebBreakdown(BaseModel):
+class sentenceBreakdown(BaseModel):
     sentence: str
     sentiment: SentimentEnum
     confidence: float=Field(..., ge=0.00, le=0.99)
@@ -55,4 +56,4 @@ class analyzerResponse(BaseModel):
     overall_sentiment: SentimentEnum
     confidence: float
     emotions: list[EmotionEnum]
-    breakdown: Optional[list[SentenceBreakdown]] = None  # only present when detailed=True
+    breakdown: Optional[list[sentenceBreakdown]] = None  # only present when detailed=True
