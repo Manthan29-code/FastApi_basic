@@ -1,11 +1,15 @@
 # SQLAlchemy engine + session factory (SQLite)
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from config import Settings
+from ..config import Settings
+from ..models.collection import Base
 
 settings = Settings()
 
 engine = create_engine(settings.DATABASE_URL, connect_args={"check_same_thread": False})
+
+# Create tables
+Base.metadata.create_all(bind=engine)
 
 SessionLocal = sessionmaker(bind=engine)
 

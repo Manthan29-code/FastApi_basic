@@ -1,5 +1,5 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
-from ContentApp.schema.analyzer import analyzerRequest, analyzerResponse
+from ContentApp.schema.Analyzer import analyzerRequest, analyzerResponse
 from ContentApp.prompt.AnalyzerTemolate import SENTIMENT_ANALYSIS_PROMPT
 
 

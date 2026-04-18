@@ -33,8 +33,8 @@ def fetch_user():
 
 
 @userRouter.put("/users/{user_id}", response_model=UserResponse)
-def edit_user(user_id: int, name: str, email: str):
-    return update_user(user_id, name, email)
+def edit_user(user_id: int, name: str, email: str , age : int):
+    return update_user(user_id, name, email , age)
 
 
 @userRouter.delete("/users/{user_id}")

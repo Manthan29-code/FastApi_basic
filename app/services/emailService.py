@@ -149,7 +149,7 @@ def send_welcome_email(name: str, email: str) -> None:
 # ─────────────────────────────────────────────────────────────────
 #  2.  UPDATE EMAIL  –  triggered on update_user()
 # ─────────────────────────────────────────────────────────────────
-def send_update_email(name: str, email: str, old_name: str, old_email: str) -> None:
+def send_update_email(name: str, email: str,age : int , old_name: str, old_email: str , old_age : int) -> None:
     subject = "✏️ Your account info was updated"
 
     body_html = f"""
@@ -181,6 +181,8 @@ def send_update_email(name: str, email: str, old_name: str, old_email: str) -> N
               <td style="padding:10px 16px;">Email</td>
               <td style="padding:10px 16px;color:#ef4444;">{old_email}</td>
               <td style="padding:10px 16px;color:#22c55e;">{email}</td>
+              <td style="padding:10px 16px;color:#ef4444;">{old_age}</td>
+              <td style="padding:10px 16px;color:#22c55e;">{age}</td>
             </tr>
           </tbody>
         </table>

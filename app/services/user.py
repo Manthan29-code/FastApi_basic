@@ -59,7 +59,7 @@ def get_user(user_id: int):
     return user
 
 
-def update_user(user_id: int, name: str, email: str):
+def update_user(user_id: int, name: str, email: str , age : int):
     db = SessionLocal()
     
     user = db.query(User).filter(User.id == user_id).first()
@@ -69,9 +69,10 @@ def update_user(user_id: int, name: str, email: str):
         raise HTTPException(status_code=404, detail="User not found")
     old_name  = user.name
     old_email = user.email
+    old_age = user.age
     user.name = name        # update fields on the object
     user.email = email      # SQLAlchemy tracks these changes
-    
+    user.age = age
     db.commit()             # UPDATE SQL runs here
     db.refresh(user)        # reload updated state from DB
     db.close()
@@ -79,8 +80,10 @@ def update_user(user_id: int, name: str, email: str):
     send_update_email(
         name=name,
         email=email,
+        age = age,
         old_name=old_name,
         old_email=old_email,
+        old_age = old_age
     )
 
     return user

@@ -2,7 +2,7 @@
 from functools import lru_cache
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
-from config import Settings
+from .config import Settings
 
 
 @lru_cache()

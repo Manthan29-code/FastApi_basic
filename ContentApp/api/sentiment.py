@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends
-from ContentApp.schema.analyzer import analyzerRequest, analyzerResponse    
+from ContentApp.schema.Analyzer import analyzerRequest, analyzerResponse    
 from ContentApp.dependencies import get_llm_client
 from ContentApp.service import analyzer_text
 from langchain_google_genai import ChatGoogleGenerativeAI

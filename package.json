@@ -1,0 +1,23 @@
+{
+  "name": "project_structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ContentApp": "uvicorn ContentApp.main:app --reload",
+    "app": "uvicorn app.main:app --reload",
+    "rag": "uvicorn rag-document-qa.main:app --reload"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manthan29-code/FastApi_basic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Manthan29-code/FastApi_basic/issues"
+  },
+  "homepage": "https://github.com/Manthan29-code/FastApi_basic#readme"
+}
