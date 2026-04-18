@@ -3,6 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from ..config import Settings
 from ..models.collection import Base
+from ..models import document  # noqa: F401
 
 settings = Settings()
 

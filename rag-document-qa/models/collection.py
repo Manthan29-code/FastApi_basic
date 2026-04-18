@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime, timezone
 from sqlalchemy import Column, String, Integer, DateTime
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import declarative_base, relationship
 
 Base = declarative_base()
 
@@ -16,3 +16,5 @@ class Collection(Base):
     description = Column(String, nullable=True)
     document_count = Column(Integer, default=0)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+    documents = relationship("Document", back_populates="collection", cascade="all, delete-orphan")
