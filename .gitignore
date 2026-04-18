@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 projectIdea
 uploads
+storage
+rag-document-qa\storage
